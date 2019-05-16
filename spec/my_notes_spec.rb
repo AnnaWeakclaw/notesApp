@@ -23,7 +23,12 @@ describe "MyNotes" do
   end
 
   it "allows user to pick a note and see its title and body" do
-    my_notes.numbered_list
-    expect{my_notes.pick_me("1")}.to output("Title you picked is: Have Breakfast and the body is: Breakfast will give you energy to start the day happily \n").to_stdout
+    expect { my_notes.pick_me("1") }.to output("Title you picked is: Have Breakfast and the body is: Breakfast will give you energy to start the day happily \n").to_stdout
+  end
+
+  it "allows user to add tile and body of the note from command line" do
+    #warning on new :expect and should syntax
+    my_notes.stub(:gets).and_return("My Personal note", "This is a very short note")
+    expect(my_notes.from_input).to include({ :title => "My Personal note", :body => "This is a very short note" })
   end
 end

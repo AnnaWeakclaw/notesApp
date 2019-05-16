@@ -31,4 +31,12 @@ class MyNotes
     number = number.to_i
     puts "Title you picked is: #{@notes[number-1][:title]} and the body is: #{@notes[number-1][:body]} "
   end
+
+  def from_input
+    puts "Add title "
+    title = gets.chomp
+    puts "Add body"
+    body = gets.chomp
+    add(title, body)
+  end
 end
