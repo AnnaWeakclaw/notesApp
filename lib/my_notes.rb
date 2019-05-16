@@ -17,4 +17,18 @@ class MyNotes
     end
     titles
   end
+
+  def numbered_list
+    titles = title_list
+    i = 1
+    titles.each { |title|
+      puts "#{i.to_s}. #{title}"
+      i += 1
+    }
+  end
+
+  def pick_me(number)
+    number = number.to_i
+
+  end
 end

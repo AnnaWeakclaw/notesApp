@@ -18,8 +18,12 @@ describe "MyNotes" do
     expect(my_notes.title_list).to eq(["Have Breakfast", "Exercise", "Read a book"])
   end
 
+  it "allows user to see all the titles" do
+    expect { my_notes.numbered_list }.to output(a_string_including("1. Have Breakfast\n2. Exercise")).to_stdout
+  end
+
   it "allows user to pick a note and see its title and body" do
-    
-    #expect(my_notes.pick_me(1)).to eq({:title => "Have Breakfast", :body => "Breakfast will give you energy to start the day happily" })
+    my_notes.numbered_list
+   # expect(my_notes.pick_me("1")).to eq({ :title => "Have Breakfast", :body => "Breakfast will give you energy to start the day happily" })
   end
 end
