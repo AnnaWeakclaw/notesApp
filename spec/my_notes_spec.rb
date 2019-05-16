@@ -24,6 +24,6 @@ describe "MyNotes" do
 
   it "allows user to pick a note and see its title and body" do
     my_notes.numbered_list
-   # expect(my_notes.pick_me("1")).to eq({ :title => "Have Breakfast", :body => "Breakfast will give you energy to start the day happily" })
+    expect{my_notes.pick_me("1")}.to output("Title you picked is: Have Breakfast and the body is: Breakfast will give you energy to start the day happily \n").to_stdout
   end
 end

@@ -29,6 +29,6 @@ class MyNotes
 
   def pick_me(number)
     number = number.to_i
-
+    puts "Title you picked is: #{@notes[number-1][:title]} and the body is: #{@notes[number-1][:body]} "
   end
 end
